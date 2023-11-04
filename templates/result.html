@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+</head>
+<body>
+<div class="container">
+    <div class="search">
+        <form action="/" method="get">
+            <input type="search" placeholder=" ... so'z kiriting" name="searched">
+            <button type="submit">Tekshirish</button>
+        </form>
+    </div>
+    <div class="wrapp">
+        <h2>Tog'ri:</h2>
+        <div class="left" id="left">
+            {% if togri %}
+            <br>
+            <h1 align="center">{{togri}} &#9989</h1>
+            <br>
+            {% else %}
+            <br>
+            <h1 align="center">Omborda bunday so'z mavjud emas!</h1>
+            <br>
+            {% endif %}
+        </div>
+        <h2>Notog'ri:</h2>
+        <div class="right" id="right">
+            {% for n in notogri %}
+            <br>
+            <h1 align="center">{{n}} &#10060</h1>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
